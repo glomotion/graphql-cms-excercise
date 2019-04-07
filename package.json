@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
     "start-server": "nodemon --exec yarn babel-node -- ./server/index.js",
-    "start-client": "webpack-dev-server --open --mode development",
+    "start-client": "webpack-dev-server --open --mode development --config webpack/webpack.config.client.js",
     "start": "concurrently \"yarn start-client\" \"yarn start-server\"",
     "build": "webpack --mode production"
   },

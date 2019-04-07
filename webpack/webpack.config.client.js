@@ -1,8 +1,7 @@
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-const ROOT = path.resolve(__dirname);
+const ROOT = path.resolve(__dirname, '../');
 
 const { sassModulesLoaders, styleLoader, cssLoader } = require('./styles-loaders');
 
