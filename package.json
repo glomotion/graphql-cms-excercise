@@ -1,0 +1,37 @@
+{
+  "name": "graphql-cms-excercise",
+  "version": "0.0.1",
+  "description": "a learning excersize in GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "start": "nodemon --exec yarn babel-node -- ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://glomotion@github.com/glomotion/graphql-cms-excercise.git"
+  },
+  "keywords": [
+    "graphql",
+    "express"
+  ],
+  "author": "Tim",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/glomotion/graphql-cms-excercise/issues"
+  },
+  "homepage": "https://github.com/glomotion/graphql-cms-excercise#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.2.1",
+    "nodemon": "^1.18.10"
+  }
+}
