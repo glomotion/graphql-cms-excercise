@@ -6,9 +6,7 @@ const ROOT = path.resolve(__dirname, '../');
 const { sassModulesLoaders, styleLoader, cssLoader } = require('./styles-loaders');
 
 module.exports = {
-  devServer: {
-    historyApiFallback: true,
-  },
+  devServer: { historyApiFallback: true },
   entry: './client/index.js',
   devtool: 'cheap-module-source-map',
   module: {
@@ -39,7 +37,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.es6', '.jsx'],
+    extensions: ['.js', '.jsx'],
     modules: ['node_modules'],
     descriptionFiles: ['package.json'],
     alias: {
