@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
-    "start": "nodemon --exec yarn babel-node -- ./server/index.js"
+    "start-server": "nodemon --exec yarn babel-node -- ./server/index.js",
+    "start-client": "webpack-dev-server --open --mode development",
+    "start": "concurrently \"yarn start-client\" \"yarn start-server\"",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -16,21 +19,44 @@
     "graphql",
     "express"
   ],
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "author": "Tim",
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/glomotion/graphql-cms-excercise/issues"
   },
   "homepage": "https://github.com/glomotion/graphql-cms-excercise#readme",
-  "dependencies": {},
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.5.0",
+    "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
+    "css-loader": "^2.1.1",
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
     "graphql": "^14.2.1",
-    "nodemon": "^1.18.10"
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }
