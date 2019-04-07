@@ -1,17 +1,42 @@
 import express from 'express';
 import express_graphql from 'express-graphql';
 import { buildSchema } from 'graphql';
+import fs from 'fs';
 
 // GraphQL schema
-const schema = buildSchema(`
+var schema = buildSchema(`
+  type Homepage {
+    heading: String
+    subheading: String
+  },
+  type Faq {
+    title: String
+    body: String
+  },
   type Query {
-    message: String
+    homepage: Homepage
+    faq(id: Int!): Faq
+    faqs: [Faq]
+    test: String
   }
 `);
 
-// Root resolver
+const loadCmsData = ({ selector }) => new Promise((res,rej) => {
+  fs.readFile('./static/data/cms-data.json', 'utf8', (err, data) => {
+    if (err) throw err;
+    res(JSON.parse(data)[selector]);
+  });
+});
+
+const getHomepage = () => loadCmsData({ selector: 'homepage' });
+const getFaqs = () => loadCmsData({ selector: 'faqs' });
+const getFaq = ({ id }) => loadCmsData({ selector: 'faqs' }).then(faqs => faqs[id]);
+
 const root = {
-  message: () => 'Hello World!'
+  test: () => 'testing out that shiz!',
+  homepage: getHomepage,
+  faq: getFaq,
+  faqs: getFaqs,
 };
 
 // Create an express server and a GraphQL endpoint
@@ -21,4 +46,5 @@ app.use('/graphql', express_graphql({
   rootValue: root,
   graphiql: true
 }));
+
 app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));

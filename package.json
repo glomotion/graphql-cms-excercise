@@ -22,8 +22,7 @@
     "url": "https://github.com/glomotion/graphql-cms-excercise/issues"
   },
   "homepage": "https://github.com/glomotion/graphql-cms-excercise#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
