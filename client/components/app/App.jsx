@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import styles from '@client/components/app/app.module.scss';
+import styles from 'client/components/app/app.module.scss';
 
 function Index() {
-  return <h2>Home</h2>;
+  return <h2>Home cow</h2>;
 }
 
 function About() {

@@ -82,7 +82,7 @@ module.exports = {
     modules: ['node_modules'],
     descriptionFiles: ['package.json'],
     alias: {
-      '@client': `${ROOT}/client`,
+      'client': `${ROOT}/client`,
     },
   },
   plugins: [
