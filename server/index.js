@@ -2,6 +2,8 @@ import express from 'express';
 import express_graphql from 'express-graphql';
 import { buildSchema } from 'graphql';
 import fs from 'fs';
+import path from 'path';
+import cors from 'cors';
 
 // GraphQL schema
 var schema = buildSchema(`
@@ -22,11 +24,13 @@ var schema = buildSchema(`
 `);
 
 const loadCmsData = ({ selector }) => new Promise((res,rej) => {
-  fs.readFile('./static/data/cms-data.json', 'utf8', (err, data) => {
+  fs.readFile(path.join(__dirname, '/static/data/cms-data.json'), 'utf8', (err, data) => {
     if (err) throw err;
     res(JSON.parse(data)[selector]);
   });
 });
+
+// loadCmsData({ selector: 'homepage' }).then(data => console.log(data));
 
 const getHomepage = () => loadCmsData({ selector: 'homepage' });
 const getFaqs = () => loadCmsData({ selector: 'faqs' });
@@ -41,6 +45,7 @@ const root = {
 
 // Create an express server and a GraphQL endpoint
 var app = express();
+app.use(cors());
 app.use('/graphql', express_graphql({
   schema: schema,
   rootValue: root,

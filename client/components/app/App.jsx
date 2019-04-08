@@ -1,36 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+
+import Home from 'client/components/home/Home';
+import Faqs from 'client/components/faqs/Faqs';
+
+import { homeUrl, faqsUrl } from 'client/utils/page-urls';
 
 import styles from 'client/components/app/app.module.scss';
 
-function Index() {
-  return <h2>Home cow</h2>;
-}
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql',
+});
 
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
-
-const AppRouter = () => {
+const App = () => {
   return (
-    <Router>
-      <div className={styles.moo}>
-        <nav>
-          <ul>
-            <li>menu shit in here!</li>
-          </ul>
-        </nav>
+    <ApolloProvider client={client}>
+      <Router>
+        <div className={styles.moo}>
+          <nav>menu shit in here!</nav>
 
-        <Route path="/" exact component={Index} />
-        <Route path="/about" component={About} />
-        <Route path="/users" component={Users} />
-      </div>
-    </Router>
+          <Route path={homeUrl()} exact component={Home} />
+          <Route path={faqsUrl()} component={Faqs} />
+        </div>
+      </Router>
+  </ApolloProvider>
   );
 }
 
-export default AppRouter;
+export default App;
