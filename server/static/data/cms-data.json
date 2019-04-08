@@ -1,6 +1,6 @@
 {
   "homepage": {
-    "heading": "Qantas Cars moooo",
+    "heading": "Qantas Cars",
     "subheading": "Powered by the sun with the best safety record on the planet",
     "heroImageUrl": "https://drive.google.com/uc?id=1svw9VdyX4fyRHd1kggq0akDSafmdOS7L"
   },
@@ -11,7 +11,7 @@
     },
     {
       "title": "When will I be invited to configure my Model 3, and when can I take delivery?",
-      "body": "<p>Model 3 reservation holders are receiving invitations to order and design Model 3 based on the time and date that they placed their reservation. Current Tesla owners have priority as a thank you for their support.</p><p>Deliveries will start in the United States first, with international deliveries starting in left-hand drive markets in late 2018, followed by right-hand drive markets in 2019.</p>"
+      "body": "<script>console.log('moo cow')</script><p>Model 3 reservation holders are receiving invitations to order and design Model 3 based on the time and date that they placed their reservation. Current Tesla owners have priority as a thank you for their support.</p><p>Deliveries will start in the United States first, with international deliveries starting in left-hand drive markets in late 2018, followed by right-hand drive markets in 2019.</p>"
     },
     {
       "title": "Which Model 3 features are currently available?",

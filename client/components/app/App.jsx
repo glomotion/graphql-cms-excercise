@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "react-apollo";
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
 
 import Home from 'client/components/home/Home';
 import Faqs from 'client/components/faqs/Faqs';
