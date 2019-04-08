@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Query } from "react-apollo";
-import { Link } from "react-router-dom";
-import ReactMarkdown from "react-markdown/with-html";
-import gql from "graphql-tag";
+import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown/with-html';
+import gql from 'graphql-tag';
 
-import Faq from "client/components/faqs/Faq";
+import Faq from 'client/components/faqs/Faq';
 
-import { faqsUrl } from "client/utils/page-urls";
+import { faqsUrl } from 'client/utils/page-urls';
 
 const FAQS_DATA = gql`
   {
@@ -18,17 +18,17 @@ const FAQS_DATA = gql`
 
 class Faqs extends Component {
   state = {
-    currentFaq: 0
+    currentFaq: 0,
   };
 
   componentDidMount() {
-    console.log("faqs component did mount!");
+    console.log('faqs component did mount!');
   }
 
   render() {
     return (
       <Query query={FAQS_DATA}>
-        {({ loading, error, data }) => {
+        {({ loading, error, data: { faqs } }) => {
           if (loading) return <p>Loading...</p>;
           if (error) return <p>Error :(</p>;
 
@@ -39,11 +39,8 @@ class Faqs extends Component {
               <Faq id={this.state.currentFaq} />
 
               <aside>
-                {data.faqs.map(({ title }, index) => (
-                  <a
-                    key={index}
-                    onClick={() => this.setState({ currentFaq: index })}
-                  >
+                {faqs.map(({ title }, index) => (
+                  <a key={index} onClick={() => this.setState({ currentFaq: index })}>
                     {title}
                   </a>
                 ))}

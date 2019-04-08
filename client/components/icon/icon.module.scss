@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'qanticons';
+  font-weight: normal;
+  font-style: normal;
+  src: url('~client/static/fonts/qanticons.woff') format('woff');
+}
+
+.icon {
+  font-family: 'qanticons';
+  font-feature-settings: 'liga' 1;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: text-bottom;
+  letter-spacing: 0;
+  line-height: inherit;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

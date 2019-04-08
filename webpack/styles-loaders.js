@@ -30,7 +30,7 @@ const sassLoader = () => ({
     outputStyle: 'expanded',
     sourceMap: true,
     MapContents: true,
-  }
+  },
 });
 
 const sassModulesLoaders = ({ useLocals } = {}) => [
