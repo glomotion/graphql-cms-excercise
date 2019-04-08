@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import { Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown/with-html';
-import gql from 'graphql-tag';
+import React, { Component } from "react";
+import { Query } from "react-apollo";
+import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown/with-html";
+import gql from "graphql-tag";
 
-import Faq from 'client/components/faqs/Faq';
+import Faq from "client/components/faqs/Faq";
 
-import { faqsUrl } from 'client/utils/page-urls';
+import { faqsUrl } from "client/utils/page-urls";
 
-const FAQS_DATA = gql`{
-  faqs {
-    title
+const FAQS_DATA = gql`
+  {
+    faqs {
+      title
+    }
   }
-}`;
+`;
 
 class Faqs extends Component {
   state = {
-    currentFaq: 0,
+    currentFaq: 0
   };
+
+  componentDidMount() {
+    console.log("faqs component did mount!");
+  }
 
   render() {
     return (

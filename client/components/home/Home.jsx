@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import { Query } from "react-apollo";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import { faqsUrl } from 'client/utils/page-urls';
+import { faqsUrl } from "client/utils/page-urls";
 
 import gql from "graphql-tag";
 
@@ -13,6 +13,10 @@ const Home = () => (
         homepage {
           heading
           subheading
+          heroImage {
+            fullRes
+            halfRes
+          }
         }
       }
     `}
@@ -25,6 +29,8 @@ const Home = () => (
         <div>
           <h1>{data.homepage.heading}</h1>
           <h2>{data.homepage.subheading}</h2>
+
+          <div>{data.homepage.heroImage.halfRes}</div>
 
           <Link to={faqsUrl()}>Learn more</Link>
         </div>

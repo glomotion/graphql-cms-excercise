@@ -2,7 +2,10 @@
   "homepage": {
     "heading": "Qantas Cars",
     "subheading": "Powered by the sun with the best safety record on the planet",
-    "heroImageUrl": "https://drive.google.com/uc?id=1svw9VdyX4fyRHd1kggq0akDSafmdOS7L"
+    "heroImage": {
+      "fullRes": "https://drive.google.com/uc?id=1svw9VdyX4fyRHd1kggq0akDSafmdOS7L",
+      "halfRes": "https://drive.google.com/uc?id=1wgtWbUZi0y3_Glo9xEURf7xH_hceiNAK"
+    }
   },
   "faqs": [
     {
