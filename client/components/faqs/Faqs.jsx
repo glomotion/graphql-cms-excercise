@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import { Query } from "react-apollo";
+import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown/with-html';
+import gql from 'graphql-tag';
 
 import Faq from 'client/components/faqs/Faq';
 
 import { faqsUrl } from 'client/utils/page-urls';
 
-import gql from "graphql-tag";
+const FAQS_DATA = gql`{
+  faqs {
+    title
+  }
+}`;
 
 class Faqs extends Component {
   state = {
@@ -16,13 +21,7 @@ class Faqs extends Component {
 
   render() {
     return (
-      <Query
-        query={gql`{
-          faqs {
-            title
-          }
-        }`}
-      >
+      <Query query={FAQS_DATA}>
         {({ loading, error, data }) => {
           if (loading) return <p>Loading...</p>;
           if (error) return <p>Error :(</p>;

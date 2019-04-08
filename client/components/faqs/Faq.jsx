@@ -6,7 +6,7 @@ import { faqsUrl } from 'client/utils/page-urls';
 
 import gql from "graphql-tag";
 
-const GET_FAQ_DATA = gql`
+const FAQ_DATA = gql`
   query Faq($id: Int!) {
     faq(id: $id) {
       title
@@ -16,11 +16,10 @@ const GET_FAQ_DATA = gql`
 `;
 
 const Faq = ({ id }) => {
-  console.log('faq!!!', id);
   return (
     <Query
       variables={{ id }}
-      query={GET_FAQ_DATA}
+      query={FAQ_DATA}
     >
       {({ loading, error, data }) => {
         if (loading) return <p>Loading...</p>;
