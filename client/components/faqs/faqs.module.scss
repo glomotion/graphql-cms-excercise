@@ -29,8 +29,6 @@
 }
 
 .faqsContainer__columnLayout__sidebar {
-  min-width: 200px;
-  width: 30%;
 }
 
 .faq__title {
@@ -79,7 +77,9 @@
 
   .sidebar {
     order: 3;
-    max-width: 260px;
+    max-width: 240px;
+    min-width: 180px;
+    width: 25%;
   }
 
   .sidebar__item--active {

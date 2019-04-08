@@ -18,7 +18,7 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <Router>
-      <div className={styles.moo}>
+      <div className={styles.app}>
         <Header />
 
         <Route path={homeUrl()} exact component={Home} />
