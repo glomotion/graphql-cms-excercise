@@ -39,6 +39,10 @@ module.exports = {
         test: /\.css$/,
         use: [styleLoader(), cssLoader()],
       },
+      // {
+      //   test: /\.(scss|sass)$/,
+      //   use: [cssLoader(), postCssLoader(), sassLoader()],
+      // },
       {
         test: /\.module\.(scss|sass)$/,
         use: [...sassModulesLoaders()],

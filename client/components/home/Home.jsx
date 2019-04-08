@@ -8,21 +8,21 @@ import styles from 'client/components/home/home.module.scss';
 
 import gql from 'graphql-tag';
 
-const Home = () => (
-  <Query
-    query={gql`
-      {
-        homepage {
-          heading
-          subheading
-          heroImage {
-            fullRes
-            halfRes
-          }
-        }
+const HOMEPAGE_DATA = gql`
+  {
+    homepage {
+      heading
+      subheading
+      heroImage {
+        fullRes
+        halfRes
       }
-    `}
-  >
+    }
+  }
+`;
+
+const Home = () => (
+  <Query query={HOMEPAGE_DATA}>
     {({ loading, error, data: { homepage } }) => {
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
@@ -39,12 +39,15 @@ const Home = () => (
           />
 
           <div className={styles.homepage__caption}>
-            <h1 className={styles.homepage__caption__heading}>{homepage.heading}</h1>
-            <h4 className={styles.homepage__caption__subheading}>{homepage.subheading}</h4>
-
-            <Link to={faqsUrl()} className={styles.homepage__caption__subheading}>
-              Learn more
-            </Link>
+            <div className={styles.homepage__caption__inner}>
+              <h1 className={styles.homepage__caption__heading}>{homepage.heading}</h1>
+              <h4 className={styles.homepage__caption__subheading}>
+                {homepage.subheading}.{' '}
+                <Link to={faqsUrl()} className={styles.homepage__caption__link}>
+                  Learn more
+                </Link>
+              </h4>
+            </div>
           </div>
         </div>
       );
