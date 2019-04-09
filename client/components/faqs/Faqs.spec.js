@@ -39,10 +39,8 @@ describe('<Faqs />', () => {
       </MockedProvider>,
     );
 
-    await wait(1);
+    await wait(20);
     fixture.update();
-
-    console.log(fixture.debug());
 
     expect(fixture.find('[data-test-reference="faq-title"]').text()).toBe('faq title in here!');
     expect(fixture.find('[data-test-reference="faq-body"]').text()).toBe('faq body content in here!');

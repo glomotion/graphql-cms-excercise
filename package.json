@@ -89,6 +89,7 @@
   },
   "moduleRoots": [
     "client",
+    "test",
     "./"
   ]
 }

@@ -26,5 +26,6 @@ module.exports = {
   moduleNameMapper: {
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
     '^client(.*)$': '<rootDir>/client$1',
+    '^test(.*)$': '<rootDir>/test$1',
   },
 };

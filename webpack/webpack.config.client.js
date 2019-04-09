@@ -57,6 +57,7 @@ module.exports = {
     descriptionFiles: ['package.json'],
     alias: {
       client: `${ROOT}/client`,
+      test: `${ROOT}/test`,
     },
   },
   plugins: [
