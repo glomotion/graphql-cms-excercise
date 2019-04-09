@@ -7,6 +7,9 @@ import { homeUrl, faqsUrl } from 'client/utils/page-urls';
 
 import styles from 'client/components/header/header.module.mscss';
 
+// @TODO: Header should consume the location from history to
+// figure out which nav link is "active"
+
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const gotoThenCloseLink = (link) => {

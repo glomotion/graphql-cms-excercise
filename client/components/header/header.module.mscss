@@ -20,6 +20,7 @@
 
 .header__logo {
   display: flex;
+  cursor: pointer;
 }
 
 .header__logo__image {
@@ -58,9 +59,11 @@
   font-weight: 400;
   padding: $measurement--padding;
   border-bottom: 1px solid $color--lineOnWhite;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
+    color: $color--qantasRed;
   }
 }
 

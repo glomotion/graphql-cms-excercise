@@ -14,7 +14,6 @@
   font-weight: 300;
   text-align: center;
   margin: ($measurement--gridUnit * 15) 0;
-  color: $color--darkTextOnWhite;
 }
 
 .faqsContainer__columnLayout {
@@ -35,7 +34,6 @@
   font-size: $measurement--smallHeadingTextSize;
   line-height: $measurement--smallHeadingLineHeight;
   font-weight: 300;
-  color: $color--darkTextOnWhite;
   margin-bottom: $measurement--padding;
 }
 
@@ -60,6 +58,7 @@
 
 .sidebar__item--active {
   font-weight: 400;
+  color: inherit;
 }
 
 @media (min-width: $breakpoint--small) {

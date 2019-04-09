@@ -46,6 +46,7 @@
 .homepage__caption__heading {
   font-size: $measurement--heroHeadingTextSize;
   line-height: $measurement--heroHeadingLineHeight;
+  letter-spacing: $measurement--heroHeadingLetterSpacing;
   font-weight: 100;
   margin: 0 0 ($measurement--gridUnit * 10);
 }
