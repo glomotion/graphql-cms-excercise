@@ -19,7 +19,10 @@ const Faqs = ({ faqs }) => {
           <Faq id={currentFaqIndex} />
         </div>
 
-        <aside className={styles.sidebar}>
+        <aside
+          className={styles.sidebar}
+          data-test-reference="faqs-sidebar"
+        >
           {faqs.map(({ title }, index) => (
             <a
               key={index}
