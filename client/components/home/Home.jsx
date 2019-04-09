@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
 
 import { faqsUrl } from 'client/utils/page-urls';
+import HandleStatus from 'client/components/graphql-transactional/HandleStatus';
 
 import styles from 'client/components/home/home.module.scss';
 
@@ -23,15 +24,14 @@ const HOMEPAGE_DATA = gql`
 
 const Home = () => (
   <Query query={HOMEPAGE_DATA}>
-    {({ loading, error, data: { homepage } }) => {
-      if (loading) return <p>Loading...</p>;
-      if (error) return <p>Error :(</p>;
-
-      return (
+    {({ loading, error, data: { homepage } }) =>
+      loading || error ? (
+        <HandleStatus {...{ loading, error }} />
+      ) : (
         <div className={styles.homepage}>
           <img
             srcSet={`${homepage.heroImage.halfRes} 600w,
-              ${homepage.heroImage.fullRes} 1200w`}
+                ${homepage.heroImage.fullRes} 1200w`}
             sizes={'(max-width: 660px) 600px, 1200px'}
             src={homepage.heroImage.halfRes}
             className={styles.homepage__bgImage}
@@ -50,8 +50,8 @@ const Home = () => (
             </div>
           </div>
         </div>
-      );
-    }}
+      )
+    }
   </Query>
 );
 

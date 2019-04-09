@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown/with-html';
 import gql from 'graphql-tag';
 import classNames from 'classnames';
 
+import HandleStatus from 'client/components/graphql-transactional/HandleStatus';
 import Faq from 'client/components/faqs/Faq';
 import styles from 'client/components/faqs/faqs.module.scss';
 import { faqsUrl } from 'client/utils/page-urls';
@@ -21,11 +22,10 @@ const Faqs = () => {
   const [currentFaqIndex, setCurrentFaqIndex] = useState(0);
   return (
     <Query query={FAQS_DATA}>
-      {({ loading, error, data: { faqs } }) => {
-        if (loading) return <p>Loading...</p>;
-        if (error) return <p>Error :(</p>;
-
-        return (
+      {({ loading, error, data: { faqs } }) =>
+        loading || error ? (
+          <HandleStatus {...{ loading, error }} />
+        ) : (
           <div className={styles.faqsContainer}>
             <h1 className={styles.faqsContainer__heading}>Some frequently asked questions</h1>
 
@@ -49,8 +49,8 @@ const Faqs = () => {
               </aside>
             </div>
           </div>
-        );
-      }}
+        )
+      }
     </Query>
   );
 };
