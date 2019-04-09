@@ -19,9 +19,8 @@ export const FAQ_DATA_QUERY = gql`
 const Faq = ({ id }) => (
   <Query variables={{ id }} query={FAQ_DATA_QUERY}>
     {({ loading, error, data }) => (loading || error
-      ? (
-        <HandleStatus {...{ loading, error }} />
-      ) : (
+      ? <HandleStatus {...{ loading, error }} />
+      : (
         <Fragment>
           <h2
             className={styles.faq__title}
