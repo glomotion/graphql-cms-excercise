@@ -10,6 +10,35 @@ import Faq from 'client/components/faqs/Faq';
 import styles from 'client/components/faqs/faqs.module.scss';
 import { faqsUrl } from 'client/utils/page-urls';
 
+const Faqs = ({ faqs }) => {
+  cont[(currentFaqIndex, setCurrentFaqIndex)] = useState(0);
+  return (
+    <div className={styles.faqsContainer}>
+      <h1 className={styles.faqsContainer__heading}>Some frequently asked questions</h1>
+
+      <div className={styles.faqsContainer__columnLayout}>
+        <div className={styles.faqsContainer__columnLayout__body}>
+          <Faq id={currentFaqIndex} />
+        </div>
+
+        <aside className={styles.sidebar}>
+          {faqs.map(({ title }, index) => (
+            <a
+              key={index}
+              onClick={() => setCurrentFaqIndex(index)}
+              className={classNames(styles.sidebar__item, {
+                [styles['sidebar__item--active']]: currentFaqIndex === index,
+              })}
+            >
+              {title}
+            </a>
+          ))}
+        </aside>
+      </div>
+    </div>
+  );
+};
+
 const FAQS_DATA = gql`
   {
     faqs {
@@ -18,41 +47,12 @@ const FAQS_DATA = gql`
   }
 `;
 
-const Faqs = () => {
-  const [currentFaqIndex, setCurrentFaqIndex] = useState(0);
-  return (
-    <Query query={FAQS_DATA}>
-      {({ loading, error, data: { faqs } }) =>
-        loading || error ? (
-          <HandleStatus {...{ loading, error }} />
-        ) : (
-          <div className={styles.faqsContainer}>
-            <h1 className={styles.faqsContainer__heading}>Some frequently asked questions</h1>
+const EnhancedFaqs = () => (
+  <Query query={FAQS_DATA}>
+    {({ loading, error, data: { faqs } }) =>
+      loading || error ? <HandleStatus {...{ loading, error }} /> : <Faqs faqs={faqs} />
+    }
+  </Query>
+);
 
-            <div className={styles.faqsContainer__columnLayout}>
-              <div className={styles.faqsContainer__columnLayout__body}>
-                <Faq id={currentFaqIndex} />
-              </div>
-
-              <aside className={styles.sidebar}>
-                {faqs.map(({ title }, index) => (
-                  <a
-                    key={index}
-                    onClick={() => setCurrentFaqIndex(index)}
-                    className={classNames(styles.sidebar__item, {
-                      [styles['sidebar__item--active']]: currentFaqIndex === index,
-                    })}
-                  >
-                    {title}
-                  </a>
-                ))}
-              </aside>
-            </div>
-          </div>
-        )
-      }
-    </Query>
-  );
-};
-
-export default Faqs;
+export default EnhancedFaqs;
