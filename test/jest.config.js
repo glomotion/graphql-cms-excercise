@@ -13,6 +13,7 @@ module.exports = {
   moduleFileExtensions: [
     'css',
     'scss',
+    'mscss',
     'js',
     'json',
     'jsx',
@@ -24,7 +25,7 @@ module.exports = {
     'node_modules',
   ],
   moduleNameMapper: {
-    '\\.(scss|sass|css)$': 'identity-obj-proxy',
+    '\\.(mscss|scss|sass|css)$': 'identity-obj-proxy',
     '^client(.*)$': '<rootDir>/client$1',
     '^test(.*)$': '<rootDir>/test$1',
   },
