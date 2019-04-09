@@ -74,7 +74,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
     "jest-fetch-mock": "^2.1.2",
-    "jsdom": "^14.0.0",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",
     "postcss-loader": "^3.0.0",
