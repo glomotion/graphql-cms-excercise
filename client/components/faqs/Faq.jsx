@@ -7,7 +7,7 @@ import HandleStatus from 'client/components/transactional-status/HandleStatus';
 
 import styles from 'client/components/faqs/faqs.module.scss';
 
-const FAQ_DATA = gql`
+export const FAQ_DATA_QUERY = gql`
   query Faq($id: Int!) {
     faq(id: $id) {
       title
@@ -17,7 +17,7 @@ const FAQ_DATA = gql`
 `;
 
 const Faq = ({ id }) => (
-  <Query variables={{ id }} query={FAQ_DATA}>
+  <Query variables={{ id }} query={FAQ_DATA_QUERY}>
     {({ loading, error, data: { faq } }) => (loading || error ? (
         <HandleStatus {...{ loading, error }} />
     ) : (

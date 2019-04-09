@@ -28,7 +28,7 @@ const schema = buildSchema(`
   }
 `);
 
-const loadCmsData = ({ selector }) => new Promise((res, rej) => {
+export const loadCmsData = ({ selector }) => new Promise((res) => {
   fs.readFile(
     path.join(__dirname, '/static/data/cms-data.json'),
     'utf8',
@@ -39,9 +39,9 @@ const loadCmsData = ({ selector }) => new Promise((res, rej) => {
   );
 });
 
-const getHomepage = () => loadCmsData({ selector: 'homepage' });
-const getFaqs = () => loadCmsData({ selector: 'faqs' });
-const getFaq = ({ id }) => loadCmsData({ selector: 'faqs' }).then(faqs => faqs[id]);
+export const getHomepage = () => loadCmsData({ selector: 'homepage' });
+export const getFaqs = () => loadCmsData({ selector: 'faqs' });
+export const getFaq = ({ id }) => loadCmsData({ selector: 'faqs' }).then(faqs => faqs[id]);
 
 const root = {
   test: () => 'testing out that shiz!',
