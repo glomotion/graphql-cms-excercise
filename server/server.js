@@ -1,5 +1,5 @@
 import express from 'express';
-import express_graphql from 'express-graphql';
+import expressGraphql from 'express-graphql';
 import { buildSchema } from 'graphql';
 import fs from 'fs';
 import path from 'path';
@@ -54,7 +54,7 @@ const app = express();
 app.use(cors());
 app.use(
   '/graphql',
-  express_graphql({
+  expressGraphql({
     schema,
     rootValue: root,
     graphiql: true,

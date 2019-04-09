@@ -58,11 +58,15 @@ const renderComponent = () => {
   return { fixture };
 };
 
+// @TODO: it's kinda bad how we have to manually wait even for mocked graphql queries.
+// If there's time, investigate a better way to pause for the query to complete.
+const WAIT_FOR_QUERY = 50;
+
 describe('<Faqs />', () => {
   it('should render out FAQ content correctly from graphql query', async () => {
     const { fixture } = renderComponent();
 
-    await wait(30);
+    await wait(WAIT_FOR_QUERY);
     fixture.update();
 
     expect(fixture.find('[data-test-reference="faq-title"]').text()).toBe(faqs[0].title);
@@ -72,7 +76,7 @@ describe('<Faqs />', () => {
   it('should render a list of faq titles as buttons', async () => {
     const { fixture } = renderComponent();
 
-    await wait(30);
+    await wait(WAIT_FOR_QUERY);
     fixture.update();
 
     const sidebar = fixture.find('[data-test-reference="faqs-sidebar"]');
@@ -84,13 +88,13 @@ describe('<Faqs />', () => {
   it('should render new FAQ content, when a sidebar faq item is clicked', async () => {
     const { fixture } = renderComponent();
 
-    await wait(30);
+    await wait(WAIT_FOR_QUERY);
     fixture.update();
 
     const sidebar = fixture.find('[data-test-reference="faqs-sidebar"]');
     sidebar.find('a').at(1).simulate('click');
 
-    await wait(30);
+    await wait(WAIT_FOR_QUERY);
     fixture.update();
 
     expect(fixture.find('[data-test-reference="faq-title"]').text()).toBe(faqs[1].title);
