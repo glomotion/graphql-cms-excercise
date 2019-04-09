@@ -1,4 +1,9 @@
 @import url('//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,700i');
+@import '~client/styles/colors';
+@import '~client/styles/measurements';
+@import '~client/styles/breakpoints';
+@import '~client/styles/animations';
+@import '~client/styles/embellishments';
 
 html {
 }
@@ -15,11 +20,11 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 24px;
+  margin: 0 0 $measurement--padding;
 }
 
 p {
-  margin: 0 0 24px;
+  margin: 0 0 $measurement--padding;
   line-height: 1.5;
 }
 

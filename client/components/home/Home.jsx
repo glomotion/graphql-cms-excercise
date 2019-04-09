@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 
 import { faqsUrl } from 'client/utils/page-urls';
 import HandleStatus from 'client/components/transactional-status/HandleStatus';
-import styles from 'client/components/home/home.module.scss';
+import styles from 'client/components/home/home.module.mscss';
 
 export const HOMEPAGE_DATA_QUERY = gql`
   {

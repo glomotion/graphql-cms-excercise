@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown/with-html';
 import gql from 'graphql-tag';
 
 import HandleStatus from 'client/components/transactional-status/HandleStatus';
-import styles from 'client/components/faqs/faqs.module.scss';
+import styles from 'client/components/faqs/faqs.module.mscss';
 
 export const FAQ_DATA_QUERY = gql`
   query Faq($id: Int!) {

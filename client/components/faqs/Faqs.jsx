@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 import HandleStatus from 'client/components/transactional-status/HandleStatus';
 import Faq from 'client/components/faqs/Faq';
-import styles from 'client/components/faqs/faqs.module.scss';
+import styles from 'client/components/faqs/faqs.module.mscss';
 
 const Faqs = ({ faqs }) => {
   const [currentFaqIndex, setCurrentFaqIndex] = useState(0);

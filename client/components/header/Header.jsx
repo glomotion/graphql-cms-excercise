@@ -5,7 +5,7 @@ import history from 'client/utils/history';
 
 import { homeUrl, faqsUrl } from 'client/utils/page-urls';
 
-import styles from 'client/components/header/header.module.scss';
+import styles from 'client/components/header/header.module.mscss';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -7,6 +7,8 @@ const {
   sassModulesLoaders,
   styleLoader,
   cssLoader,
+  sassLoader,
+  postCssLoader,
 } = require('./styles-loaders');
 
 module.exports = {
@@ -37,13 +39,13 @@ module.exports = {
         test: /\.css$/,
         use: [styleLoader(), cssLoader()],
       },
-      // {
-      //   test: /\.(scss|sass)$/,
-      //   use: [cssLoader(), postCssLoader(), sassLoader()],
-      // },
       {
-        test: /\.module\.(scss|sass)$/,
+        test: /\.module\.mscss$/,
         use: [...sassModulesLoaders()],
+      },
+      {
+        test: /\.scss$/,
+        use: [styleLoader(), cssLoader(), postCssLoader(), sassLoader()],
       },
       {
         test: /\.woff(2)?/,

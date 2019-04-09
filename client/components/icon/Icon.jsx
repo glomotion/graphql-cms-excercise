@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import styles from 'client/components/icon/icon.module.scss';
+import styles from 'client/components/icon/icon.module.mscss';
 
 const Icon = ({ className, type, ...props }) => (
   <i className={classNames(styles.icon, className)} {...props}>
