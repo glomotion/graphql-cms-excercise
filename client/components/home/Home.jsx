@@ -49,7 +49,10 @@ const Home = () => (
                 data-test-reference="sub-heading"
               >
                 {data.homepage.subheading}.{' '}
-                <Link to={faqsUrl()} className={styles.homepage__caption__link}>
+                <Link
+                  to={faqsUrl()}
+                  className={styles.homepage__caption__link}
+                >
                   Learn more
                 </Link>
               </h4>

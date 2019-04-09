@@ -53,8 +53,12 @@ describe('<Home />', () => {
     await wait(30);
     fixture.update();
 
-    console.log('!!!!!!!!!!!!', fixture.find('[data-test-reference="image-srcset"]'));
     expect(fixture.find('[data-test-reference="heading"]').text()).toBe(dummyHeading);
     expect(fixture.find('[data-test-reference="sub-heading"]').text()).toContain(dummySubHeading);
+    const srcSet = fixture.find('[data-test-reference="image-srcset"]');
+
+    expect(srcSet.prop('src')).toBe(dummyHeroImage.halfRes);
+    expect(srcSet.prop('srcSet')).toContain(dummyHeroImage.fullRes);
+    expect(srcSet.prop('srcSet')).toContain(dummyHeroImage.halfRes);
   });
 });
