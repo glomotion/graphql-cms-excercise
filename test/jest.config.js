@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  setupFiles: ['<rootDir>/test/jest.setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/test/jest.setup.js'],
   rootDir: path.resolve(__dirname, '../'),
   verbose: true,
   transform: {
@@ -11,7 +11,11 @@ module.exports = {
     NODE_ENV: 'test',
   },
   moduleFileExtensions: [
-    'js', 'jsx', 'css', 'scss',
+    'css',
+    'scss',
+    'js',
+    'json',
+    'jsx',
   ],
   modulePathIgnorePatterns: [
 
@@ -21,6 +25,6 @@ module.exports = {
   ],
   moduleNameMapper: {
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
-    'client(.*)$': '<rootDir>/client/$1',
+    '^client(.*)$': '<rootDir>/client$1',
   },
 };

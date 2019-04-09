@@ -6,8 +6,6 @@ const ROOT = path.join(__dirname, '../');
 const {
   sassModulesLoaders,
   styleLoader,
-  postCssLoader,
-  sassLoader,
   cssLoader,
 } = require('./styles-loaders');
 
@@ -16,7 +14,7 @@ module.exports = {
     historyApiFallback: true,
     port: 3000,
   },
-  entry: './client/index.js',
+  entry: './client/main.js',
   devtool: 'cheap-module-source-map',
   module: {
     rules: [

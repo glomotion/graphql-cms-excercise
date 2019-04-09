@@ -18,6 +18,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 const App = () => (
   <ApolloProvider client={client}>
     <Router history={history}>

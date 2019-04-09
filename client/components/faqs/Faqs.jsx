@@ -41,7 +41,7 @@ Faqs.propTypes = {
   faqs: PropTypes.array,
 };
 
-const FAQS_DATA = gql`
+export const FAQS_DATA_QUERY = gql`
   {
     faqs {
       title
@@ -50,7 +50,7 @@ const FAQS_DATA = gql`
 `;
 
 const EnhancedFaqs = () => (
-  <Query query={FAQS_DATA}>
+  <Query query={FAQS_DATA_QUERY}>
     {({ loading, error, data: { faqs } }) => (loading || error
       ? <HandleStatus {...{ loading, error }} />
       : <Faqs faqs={faqs} />
