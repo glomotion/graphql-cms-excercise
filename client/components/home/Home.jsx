@@ -24,10 +24,9 @@ const HOMEPAGE_DATA = gql`
 
 const Home = () => (
   <Query query={HOMEPAGE_DATA}>
-    {({ loading, error, data: { homepage } }) =>
-      loading || error ? (
+    {({ loading, error, data: { homepage } }) => (loading || error ? (
         <HandleStatus {...{ loading, error }} />
-      ) : (
+    ) : (
         <div className={styles.homepage}>
           <img
             srcSet={`${homepage.heroImage.halfRes} 600w,
@@ -35,7 +34,7 @@ const Home = () => (
             sizes={'(max-width: 660px) 600px, 1200px'}
             src={homepage.heroImage.halfRes}
             className={styles.homepage__bgImage}
-            alt={`Photograph of ${name}`}
+            alt="Photograph of a Car"
           />
 
           <div className={styles.homepage__caption}>
@@ -50,7 +49,7 @@ const Home = () => (
             </div>
           </div>
         </div>
-      )
+    ))
     }
   </Query>
 );

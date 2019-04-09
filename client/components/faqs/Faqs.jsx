@@ -1,14 +1,12 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Query } from 'react-apollo';
-import { Link } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown/with-html';
 import gql from 'graphql-tag';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import HandleStatus from 'client/components/transactional-status/HandleStatus';
 import Faq from 'client/components/faqs/Faq';
 import styles from 'client/components/faqs/faqs.module.scss';
-import { faqsUrl } from 'client/utils/page-urls';
 
 const Faqs = ({ faqs }) => {
   const [currentFaqIndex, setCurrentFaqIndex] = useState(0);
@@ -39,6 +37,10 @@ const Faqs = ({ faqs }) => {
   );
 };
 
+Faqs.propTypes = {
+  faqs: PropTypes.array,
+};
+
 const FAQS_DATA = gql`
   {
     faqs {
@@ -49,9 +51,10 @@ const FAQS_DATA = gql`
 
 const EnhancedFaqs = () => (
   <Query query={FAQS_DATA}>
-    {({ loading, error, data: { faqs } }) =>
-      loading || error ? <HandleStatus {...{ loading, error }} /> : <Faqs faqs={faqs} />
-    }
+    {({ loading, error, data: { faqs } }) => (loading || error
+      ? <HandleStatus {...{ loading, error }} />
+      : <Faqs faqs={faqs} />
+    )}
   </Query>
 );
 

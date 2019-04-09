@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Icon from 'client/components/icon/Icon';
@@ -10,7 +10,7 @@ import styles from 'client/components/header/header.module.scss';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const gotoThenCloseLink = link => {
+  const gotoThenCloseLink = (link) => {
     history.push(link);
     setMenuOpen(false);
   };
