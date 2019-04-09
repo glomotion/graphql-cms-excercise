@@ -1,8 +1,12 @@
+import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 import Routes from 'client/components/routes/Routes';
 import Header from 'client/components/header/Header';
+import history from 'client/utils/history';
 
 import styles from 'client/components/app/app.module.scss';
 
@@ -12,10 +16,10 @@ const client = new ApolloClient({
 
 const App = () => (
   <ApolloProvider client={client}>
-    <div className={styles.app}>
+    <Router history={history}>
       <Header />
       <Routes />
-    </div>
+    </Router>
   </ApolloProvider>
 );
 
