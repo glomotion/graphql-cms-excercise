@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
-import LoadingStatus from 'client/components/graphql-transactional/LoadingStatus';
-import ErrorStatus from 'client/components/graphql-transactional/ErrorStatus';
+import LoadingStatus from 'client/components/transactional-status/LoadingStatus';
+import ErrorStatus from 'client/components/transactional-status/ErrorStatus';
 
 const HandleStatus = ({ loading, error }) => (
   <Fragment>

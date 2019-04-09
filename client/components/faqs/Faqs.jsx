@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown/with-html';
 import gql from 'graphql-tag';
 import classNames from 'classnames';
 
-import HandleStatus from 'client/components/graphql-transactional/HandleStatus';
+import HandleStatus from 'client/components/transactional-status/HandleStatus';
 import Faq from 'client/components/faqs/Faq';
 import styles from 'client/components/faqs/faqs.module.scss';
 import { faqsUrl } from 'client/utils/page-urls';

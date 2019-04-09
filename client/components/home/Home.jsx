@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
 
 import { faqsUrl } from 'client/utils/page-urls';
-import HandleStatus from 'client/components/graphql-transactional/HandleStatus';
+import HandleStatus from 'client/components/transactional-status/HandleStatus';
 
 import styles from 'client/components/home/home.module.scss';
 
