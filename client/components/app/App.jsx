@@ -2,7 +2,6 @@ import React from 'react';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import fetch from 'unfetch';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';

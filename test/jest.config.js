@@ -18,8 +18,6 @@ module.exports = {
   ],
   moduleDirectories: [
     'node_modules',
-    'client',
-    'server',
   ],
   moduleNameMapper: {
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
