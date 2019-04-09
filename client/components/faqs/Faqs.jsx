@@ -11,7 +11,7 @@ import styles from 'client/components/faqs/faqs.module.scss';
 import { faqsUrl } from 'client/utils/page-urls';
 
 const Faqs = ({ faqs }) => {
-  cont[(currentFaqIndex, setCurrentFaqIndex)] = useState(0);
+  const [currentFaqIndex, setCurrentFaqIndex] = useState(0);
   return (
     <div className={styles.faqsContainer}>
       <h1 className={styles.faqsContainer__heading}>Some frequently asked questions</h1>

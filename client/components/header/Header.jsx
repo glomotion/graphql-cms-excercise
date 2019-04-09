@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, browserHistory } from 'react-router-dom';
 import Icon from 'client/components/icon/Icon';
 
 import { homeUrl, faqsUrl } from 'client/utils/page-urls';
@@ -9,6 +9,11 @@ import styles from 'client/components/header/header.module.scss';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const gotoThenCloseLink = ({ link }) => {
+    browserHistory.push(link);
+    setMenuOpen(fasle);
+  };
+
   return (
     <header
       className={classNames(styles.header, {
@@ -28,9 +33,9 @@ const Header = () => {
           [styles['nav--menuOpen']]: menuOpen,
         })}
       >
-        <Link to={homeUrl()} className={styles.nav__navItem}>
+        <a onClick={() => gotoThenCloseLink({ link: homeUrl() })}>
           <span className={styles.nav__navItem__inner}>Home</span>
-        </Link>
+        </a>
         <Link to={faqsUrl()} className={styles.nav__navItem}>
           <span className={styles.nav__navItem__inner}>Faqs</span>
         </Link>
