@@ -21,11 +21,6 @@
     "graphql",
     "express"
   ],
-  "jest": {
-    "setupFiles": [
-      "./test/setupTests.js"
-    ]
-  },
   "author": "Tim",
   "license": "UNLICENSED",
   "bugs": {
@@ -33,20 +28,24 @@
   },
   "homepage": "https://github.com/glomotion/graphql-cms-excercise#readme",
   "dependencies": {
-    "apollo-boost": "^0.3.1",
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link-http": "^1.5.14",
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
     "graphql": "^14.2.1",
     "graphql-tag": "^2.10.1",
+    "history": "^4.9.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-apollo": "^2.5.4",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.0.6",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "unfetch": "^4.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",

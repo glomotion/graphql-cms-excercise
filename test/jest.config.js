@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  setupFiles: ['<rootDir>/test/jest.setup.js'],
   rootDir: path.resolve(__dirname, '../'),
   verbose: true,
   transform: {
@@ -20,11 +21,8 @@ module.exports = {
     'client',
     'server',
   ],
-  // snapshotSerializers: [
-  //   'enzyme-to-json/serializer',
-  // ],
   moduleNameMapper: {
+    '\\.(scss|sass|css)$': 'identity-obj-proxy',
     'client(.*)$': '<rootDir>/client/$1',
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
 };

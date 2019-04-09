@@ -1,17 +1,22 @@
 import React from 'react';
-import ApolloClient from 'apollo-boost';
+import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import fetch from 'unfetch';
+import { createHttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import Routes from 'client/components/routes/Routes';
 import Header from 'client/components/header/Header';
 import history from 'client/utils/history';
 
-import styles from 'client/components/app/app.module.scss';
-
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
+  link: createHttpLink({
+    uri: 'http://localhost:4000/graphql',
+    fetch,
+  }),
+  cache: new InMemoryCache(),
 });
 
 const App = () => (
