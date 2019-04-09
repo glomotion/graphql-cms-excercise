@@ -42,7 +42,6 @@ describe('<Header />', () => {
     const { fixture } = renderComponent();
 
     expect(history.push.mock.calls.length).toBe(0);
-    expect(fixture.find('[data-test-reference="nav"]').prop('className')).not.toContain('nav--menuOpen');
 
     fixture.find('[data-test-reference="menu-button"]').simulate('click');
 
@@ -51,7 +50,6 @@ describe('<Header />', () => {
     fixture.find('[data-test-reference="faqs-link"]').simulate('click');
 
     expect(fixture.find('[data-test-reference="nav"]').prop('className')).not.toContain('nav--menuOpen');
-
     expect(history.push.mock.calls.length).toBe(1);
     expect(history.push.mock.calls[0]).toContain('/faqs');
   });
