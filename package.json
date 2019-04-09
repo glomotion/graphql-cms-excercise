@@ -12,7 +12,7 @@
     "start-server": "nodemon --exec yarn babel-node -- ./server/server.js",
     "start-client": "webpack-dev-server --open --mode development --config webpack/webpack.config.client.js",
     "start": "concurrently \"yarn start-client\" \"yarn start-server\"",
-    "build": "webpack --mode production"
+    "build": "echo 'this project does not yet have a production build-mode'"
   },
   "repository": {
     "type": "git",
