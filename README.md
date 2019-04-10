@@ -17,7 +17,12 @@ $ yarn _test # Run unit tests and output coverage
 $ yarn test-dev # Run unit tests and watch for file changes
 ```
 
+## Check flow-typing:
+```bash
+$ yarn run flow 
+```
+
 ## Run:
 ```bash
-$ yarn start # Startup the app 
+$ yarn start # Startup the app
 ```
