@@ -4,7 +4,6 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ROOT = path.join(__dirname, '../');
 
 const {
-  sassModulesLoaders,
   styleLoader,
   cssLoader,
   sassLoader,
@@ -40,12 +39,23 @@ module.exports = {
         use: [styleLoader(), cssLoader()],
       },
       {
-        test: /\.module\.mscss$/,
-        use: [...sassModulesLoaders()],
+        test: /\.scss$/,
+        use: [
+          styleLoader(),
+          cssLoader(),
+          postCssLoader(),
+          sassLoader(),
+        ],
       },
       {
-        test: /\.scss$/,
-        use: [styleLoader(), cssLoader(), postCssLoader(), sassLoader()],
+        test: /\.mscss$/,
+        use: [
+          styleLoader(),
+          'css-modules-flow-types-loader',
+          cssLoader({ cssModules: true }),
+          postCssLoader(),
+          sassLoader(),
+        ],
       },
       {
         test: /\.woff(2)?/,
