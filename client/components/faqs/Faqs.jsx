@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import HandleStatus from 'client/components/transactional-status/HandleStatus';
@@ -39,10 +38,6 @@ const Faqs = ({ faqs }: { faqs: Array<Object> }) => {
       </div>
     </div>
   );
-};
-
-Faqs.propTypes = {
-  faqs: PropTypes.array,
 };
 
 export const FAQS_DATA_QUERY = gql`
