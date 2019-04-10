@@ -37,6 +37,16 @@
   margin-bottom: $measurement--padding;
 }
 
+.faq__body {
+
+  // We need to use scoped global styles here,
+  // so that we can style the incoming markdown
+  p {
+    margin: 0 0 $measurement--padding;
+    line-height: 1.5;
+  }
+}
+
 .sidebar {
   display: flex;
   flex-flow: column nowrap;

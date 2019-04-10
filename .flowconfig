@@ -8,9 +8,14 @@
 
 [options]
 module.name_mapper='^client' ->'<PROJECT_ROOT>/client'
-module.name_mapper.extension='mscss' -> '<PROJECT_ROOT>/SCSSFlowStub.js.flow'
 module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/SCSSFlowStub.js.flow'
 module.name_mapper.extension='css' -> '<PROJECT_ROOT>/SCSSFlowStub.js.flow'
+module.file_ext=.mscss
+module.file_ext=.scss
+module.file_ext=.css
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
 
 [strict]
 
