@@ -2230,6 +2230,16 @@ css-loader@^2.1.1:
     postcss-value-parser "^3.3.0"
     schema-utils "^1.0.0"
 
+css-modules-flow-types-loader@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/css-modules-flow-types-loader/-/css-modules-flow-types-loader-1.1.1.tgz#2fb7476dd5e161d16f7f8294214d91d316357a73"
+  dependencies:
+    css-modules-flow-types-printer "^1.1.1"
+
+css-modules-flow-types-printer@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/css-modules-flow-types-printer/-/css-modules-flow-types-printer-1.1.1.tgz#c2ddd13ce882407d3c3a21888cf3755fad10af1a"
+
 css-prefers-color-scheme@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/css-prefers-color-scheme/-/css-prefers-color-scheme-3.1.1.tgz#6f830a2714199d4f0d0d0bb8a27916ed65cff1f4"

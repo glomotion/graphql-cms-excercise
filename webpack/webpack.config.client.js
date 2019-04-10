@@ -51,6 +51,7 @@ module.exports = {
         test: /\.mscss$/,
         use: [
           styleLoader(),
+          'css-modules-flow-types-loader',
           cssLoader({ cssModules: true }),
           postCssLoader(),
           sassLoader(),
