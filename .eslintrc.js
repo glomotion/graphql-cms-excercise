@@ -1,6 +1,13 @@
 module.exports = {
-  plugins: ['react'],
-  extends: ['airbnb-base', 'plugin:react/recommended'],
+  plugins: [
+    'react',
+    'flowtype',
+  ],
+  extends: [
+    'airbnb-base',
+    'plugin:react/recommended',
+    'plugin:flowtype/recommended',
+  ],
   ecmaFeatures: {
     jsx: true,
   },
@@ -10,9 +17,12 @@ module.exports = {
     browser: true,
   },
   settings: {
-    "import/resolver": {
-      "webpack": {
-        "config": "./webpack/webpack.config.client.js",
+    'import/resolver': {
+      'webpack': {
+        'config': './webpack/webpack.config.client.js',
+      },
+      flowtype: {
+        onlyFilesWithFlowAnnotation: true,
       },
     },
   },

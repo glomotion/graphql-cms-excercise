@@ -1,5 +1,4 @@
 [ignore]
-.*/node_modules/**/.*
 
 [include]
 
@@ -9,6 +8,9 @@
 
 [options]
 module.name_mapper='^client' ->'<PROJECT_ROOT>/client'
+module.name_mapper.extension='mscss' -> '<PROJECT_ROOT>/SCSSFlowStub.js.flow'
+module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/SCSSFlowStub.js.flow'
+module.name_mapper.extension='css' -> '<PROJECT_ROOT>/SCSSFlowStub.js.flow'
 
 [strict]
 

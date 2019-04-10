@@ -1,3 +1,4 @@
+// @flow
 import React, { useState } from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -8,7 +9,7 @@ import HandleStatus from 'client/components/transactional-status/HandleStatus';
 import Faq from 'client/components/faqs/Faq';
 import styles from 'client/components/faqs/faqs.module.mscss';
 
-const Faqs = ({ faqs }) => {
+const Faqs = ({ faqs }: { faqs: Array<Object> }) => {
   const [currentFaqIndex, setCurrentFaqIndex] = useState(0);
   return (
     <div className={styles.faqsContainer}>
