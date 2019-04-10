@@ -1,3 +1,4 @@
+// @flow
 import express from 'express';
 import expressGraphql from 'express-graphql';
 import { buildSchema } from 'graphql';
@@ -28,7 +29,11 @@ const schema = buildSchema(`
   }
 `);
 
-export const loadCmsData = ({ selector }) => new Promise((res) => {
+export const loadCmsData = ({
+  selector,
+}: {
+  selector: string,
+}) => new Promise<any>((res) => {
   fs.readFile(
     path.join(__dirname, '/static/data/cms-data.json'),
     'utf8',
@@ -41,7 +46,7 @@ export const loadCmsData = ({ selector }) => new Promise((res) => {
 
 export const getHomepage = () => loadCmsData({ selector: 'homepage' });
 export const getFaqs = () => loadCmsData({ selector: 'faqs' });
-export const getFaq = ({ id }) => loadCmsData({ selector: 'faqs' }).then(faqs => faqs[id]);
+export const getFaq = ({ id }: { id: number }) => loadCmsData({ selector: 'faqs' }).then((faqs: Array<Object>) => faqs[id]);
 
 const root = {
   test: () => 'testing out that shiz!',
