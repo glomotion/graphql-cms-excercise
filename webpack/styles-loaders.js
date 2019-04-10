@@ -33,15 +33,8 @@ const sassLoader = () => ({
   },
 });
 
-const sassModulesLoaders = ({ useLocals } = {}) => [
-  styleLoader(),
-  cssLoader({ cssModules: true, useLocals }),
-  postCssLoader(),
-  sassLoader(),
-];
 
 exports.styleLoader = styleLoader;
 exports.cssLoader = cssLoader;
 exports.postCssLoader = postCssLoader;
 exports.sassLoader = sassLoader;
-exports.sassModulesLoaders = sassModulesLoaders;

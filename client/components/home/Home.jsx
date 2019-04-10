@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';

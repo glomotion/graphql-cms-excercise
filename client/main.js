@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { render } from 'react-dom';
 
@@ -6,4 +7,5 @@ import 'client/styles/global.scss';
 
 import App from 'client/components/app/App';
 
-render(<App />, document.querySelector('#root'));
+const root: any = document.getElementById('root');
+render(<App />, root);

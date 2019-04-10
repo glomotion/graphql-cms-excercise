@@ -1,3 +1,4 @@
+// @flow
 import React, { Fragment } from 'react';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
@@ -16,7 +17,7 @@ export const FAQ_DATA_QUERY = gql`
   }
 `;
 
-const Faq = ({ id }) => (
+const Faq = ({ id }: { id: number }) => (
   <Query variables={{ id }} query={FAQ_DATA_QUERY}>
     {({ loading, error, data }) => (loading || error
       ? <HandleStatus {...{ loading, error }} />
