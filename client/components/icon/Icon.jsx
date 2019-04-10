@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 
 import styles from 'client/components/icon/icon.module.mscss';
 
@@ -18,10 +17,5 @@ const Icon = ({
     {type}
   </i>
 );
-
-Icon.propTypes = {
-  className: PropTypes.string,
-  type: PropTypes.string,
-};
 
 export default Icon;

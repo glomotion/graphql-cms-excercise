@@ -1,7 +1,6 @@
 // @flow
 import React, { Fragment } from 'react';
 import { Query } from 'react-apollo';
-import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown/with-html';
 import gql from 'graphql-tag';
 
@@ -37,10 +36,5 @@ const Faq = ({ id }: { id: number }) => (
       ))}
   </Query>
 );
-
-Faq.propTypes = {
-  id: PropTypes.number,
-};
-
 
 export default Faq;
