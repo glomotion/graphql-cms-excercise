@@ -13,7 +13,7 @@ import styles from 'client/components/header/header.module.mscss';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const gotoThenCloseLink = (link) => {
+  const gotoThenCloseLink = (link: string) => {
     history.push(link);
     setMenuOpen(false);
   };
