@@ -97,6 +97,7 @@
   "moduleRoots": [
     "client",
     "test",
+    "flow-typed",
     "./"
   ]
 }

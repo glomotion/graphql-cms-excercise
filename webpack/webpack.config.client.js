@@ -70,6 +70,7 @@ module.exports = {
     alias: {
       client: `${ROOT}/client`,
       test: `${ROOT}/test`,
+      'flow-typed': `${ROOT}/flow-typed`,
     },
   },
   plugins: [

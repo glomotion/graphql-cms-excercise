@@ -28,5 +28,6 @@ module.exports = {
     '\\.(mscss|scss|sass|css)$': 'identity-obj-proxy',
     '^client(.*)$': '<rootDir>/client$1',
     '^test(.*)$': '<rootDir>/test$1',
+    '^flow-typed(.*)$': '<rootDir>/flow-typed$1',
   },
 };

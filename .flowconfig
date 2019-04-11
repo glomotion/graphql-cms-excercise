@@ -3,6 +3,7 @@
 [include]
 
 [libs]
+./flow-typed/npm/react-router-dom_v5.x.x.js
 
 [lints]
 
