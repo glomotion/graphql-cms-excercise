@@ -23,7 +23,7 @@ const Faqs = ({ faqs }: { faqs: Array<Object> }) => {
           className={styles.sidebar}
           data-test-reference="faqs-sidebar"
         >
-          {faqs.map(({ title }, index) => (
+          {faqs.map(({ title }: { title: string }, index) => (
             <a
               key={index}
               onClick={() => setCurrentFaqIndex(index)}
@@ -50,9 +50,19 @@ export const FAQS_DATA_QUERY = gql`
 
 const EnhancedFaqs = () => (
   <Query query={FAQS_DATA_QUERY}>
-    {({ loading, error, data: { faqs } }) => (loading || error
+    {({
+      loading,
+      error,
+      data,
+    }: {
+      loading: boolean,
+      error: boolean,
+      data: {
+        faqs: Array<*>,
+      },
+    }) => (loading || error
       ? <HandleStatus {...{ loading, error }} />
-      : <Faqs faqs={faqs} />
+      : <Faqs faqs={data.faqs} />
     )}
   </Query>
 );
