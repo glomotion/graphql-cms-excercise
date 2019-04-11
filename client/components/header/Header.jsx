@@ -5,6 +5,8 @@ import Icon from 'client/components/icon/Icon';
 import history from 'client/utils/history';
 
 import { homeUrl, faqsUrl } from 'client/utils/page-urls';
+import type { RouterHistory } from 'react-router-dom';
+
 import styles from 'client/components/header/header.module.mscss';
 
 // @TODO: Header should consume the location from history to
