@@ -30,7 +30,16 @@ const Home = () => (
     }: {
       loading: boolean,
       error: boolean,
-      data: Object,
+      data: {
+        homepage: {
+          heading: string,
+          subheading: string,
+          heroImage: {
+            fullRes: string,
+            halfRes: string,
+          },
+        },
+      },
     }) => (loading || error
       ? <HandleStatus {...{ loading, error }} />
       : (
