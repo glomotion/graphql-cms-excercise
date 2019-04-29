@@ -23,7 +23,15 @@ export const HOMEPAGE_DATA_QUERY = gql`
 
 const Home = () => (
   <Query query={HOMEPAGE_DATA_QUERY}>
-    {({ loading, error, data }) => (loading || error
+    {({
+      loading,
+      error,
+      data,
+    }: {
+      loading: boolean,
+      error: boolean,
+      data: Object,
+    }) => (loading || error
       ? <HandleStatus {...{ loading, error }} />
       : (
         <div className={styles.homepage}>
