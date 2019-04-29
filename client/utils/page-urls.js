@@ -1,2 +1,3 @@
-export const homeUrl = () => '/';
-export const faqsUrl = () => '/faqs';
+// @flow
+export const homeUrl = (): string => '/';
+export const faqsUrl = (): string => '/faqs';
