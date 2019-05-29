@@ -13,6 +13,10 @@ body {
   font-weight: 300;
   font-size: 16px;
   color: $color--darkTextOnWhite;
+  
+  // Get fonts to look slightly nicer where possible
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // @TODO: ideally, both p and hx's should be react base components - with modular styles,
